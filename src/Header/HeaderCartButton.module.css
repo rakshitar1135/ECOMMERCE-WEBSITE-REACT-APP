@@ -5,6 +5,11 @@
     align-items: center;
     background-color: black;
     margin-right: 50px;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.95);
 }
 
 .button span {
