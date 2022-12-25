@@ -12,6 +12,10 @@
     object-fit: cover;
 }
 
+.div img:hover {
+    transform: scale(110%);
+}
+
 .div h2 {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -32,6 +36,7 @@
     margin-bottom: 30px;
     margin-top: -10px;
 }
+
 .div button:hover {
     background-color: orange;
     color: black;

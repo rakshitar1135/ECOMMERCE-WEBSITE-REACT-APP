@@ -1,4 +1,3 @@
-
 import React, {useContext} from 'react';
 
 import classes from './CartItem.module.css';
@@ -12,6 +11,8 @@ const CartItem = (props) => {
   const removeCartItemHandler = (title) => {
     cartCtx.removeItem(title);
   }
+
+  // console.log(props.item.imageUrl);
 
   return (
     <React.Fragment>

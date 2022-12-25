@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
@@ -6,7 +8,9 @@ import Header from './Header/Header';
 import Home from './Pages/Home';
 import Store from './Pages/Store';
 import About from './Pages/About';
+import ContactUs from './Pages/ContactUs';
 import Footer from './Footer/Footer';
+import { ShowCartContextProvider } from './Store/ShowCartContext';
 
 function App() {
   const productsArr = [
@@ -41,7 +45,9 @@ function App() {
 
   return (
     <React.Fragment>
-      <Header />
+      <ShowCartContextProvider>
+        <Header />
+      </ShowCartContextProvider>
 
       <Route path=''>
         <Redirect to='/home' />
@@ -50,11 +56,19 @@ function App() {
       <Route path='/home'>
         <Home />
       </Route>
-      <Route path='/store'>
-        <Store productList={productsArr} />
-      </Route>
+
+      <ShowCartContextProvider>
+        <Route path='/store'>
+          <Store productList={productsArr} />
+        </Route>
+      </ShowCartContextProvider>
+
       <Route path='/about'>
         <About />
+      </Route>
+
+      <Route path='/contact'>
+        <ContactUs />
       </Route>
 
       <Footer />
